@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,9 +15,22 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Enquiry from ${formData.name}${formData.company ? ` - ${formData.company}` : ''}`);
+    const body = encodeURIComponent(`Name: ${formData.name}
+Email: ${formData.email}
+${formData.company ? `Company: ${formData.company}` : ''}
+
+Message:
+${formData.message}`);
+    
+    const mailtoLink = `mailto:alastair@halconsulting.com.au?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
     toast({
       title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
     });
     setFormData({ name: '', email: '', company: '', message: '' });
   };
@@ -54,7 +67,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400">Email</p>
-                    <p className="text-white font-medium">contact@halconsulting.com</p>
+                    <p className="text-white font-medium">alastair@halconsulting.com.au</p>
                   </div>
                 </div>
                 
@@ -64,17 +77,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400">Phone</p>
-                    <p className="text-white font-medium">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-600 rounded-lg">
-                    <MapPin size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400">Office</p>
-                    <p className="text-white font-medium">123 Tech Boulevard, Suite 100<br />Innovation City, IC 12345</p>
+                    <p className="text-white font-medium">0414 350 035</p>
                   </div>
                 </div>
               </div>
