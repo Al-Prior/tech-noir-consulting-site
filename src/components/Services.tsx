@@ -39,7 +39,7 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-orange-500 bg-clip-text text-transparent">
             Our Services
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -53,7 +53,7 @@ const Services = () => {
               key={index}
               className="bg-gray-900/80 border border-gray-700 p-8 rounded-xl hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 group"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg mb-6 group-hover:shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-orange-600 rounded-lg mb-6 group-hover:shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
                 <service.icon size={32} className="text-white" />
               </div>
               

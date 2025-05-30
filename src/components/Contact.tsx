@@ -33,7 +33,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-orange-500 bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -49,17 +49,17 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-600 rounded-lg">
                     <Mail size={20} className="text-white" />
                   </div>
                   <div>
                     <p className="text-gray-400">Email</p>
-                    <p className="text-white font-medium">contact@techconsultpro.com</p>
+                    <p className="text-white font-medium">contact@halconsulting.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-600 rounded-lg">
                     <Phone size={20} className="text-white" />
                   </div>
                   <div>
@@ -69,7 +69,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-600 rounded-lg">
                     <MapPin size={20} className="text-white" />
                   </div>
                   <div>
@@ -151,7 +151,7 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-blue-500 to-orange-600 hover:from-blue-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
               >
                 <Send size={20} />
                 <span>Send Message</span>
