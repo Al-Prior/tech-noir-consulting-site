@@ -1,47 +1,7 @@
 
-import { Mail, Phone, Send } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Enquiry from ${formData.name}${formData.company ? ` - ${formData.company}` : ''}`);
-    const body = encodeURIComponent(`Name: ${formData.name}
-Email: ${formData.email}
-${formData.company ? `Company: ${formData.company}` : ''}
-
-Message:
-${formData.message}`);
-    
-    const mailtoLink = `mailto:alastair@halconsulting.com.au?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: '', email: '', company: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,11 +14,11 @@ ${formData.message}`);
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
+        <div className="flex justify-center">
+          {/* Contact Information - Centered */}
+          <div className="w-full max-w-md">
             <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-white">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-white text-center">Get in Touch</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -82,84 +42,6 @@ ${formData.message}`);
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                    placeholder="Your Name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                  placeholder="Your Company"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-                  placeholder="Tell us about your project or how we can help you..."
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-orange-600 hover:from-blue-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-              >
-                <Send size={20} />
-                <span>Send Message</span>
-              </button>
-            </form>
           </div>
         </div>
       </div>
